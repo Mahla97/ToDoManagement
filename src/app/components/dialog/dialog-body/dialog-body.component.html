@@ -1,0 +1,17 @@
+<div mat-dialog-content>
+  <h3>{{ data.question }}</h3>
+  <form [formGroup]="form">
+    <mat-form-field class="w-100">
+      <mat-label>Add Title</mat-label>
+      <input matInput formControlName="text">
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Add Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="form.value" color="primary" [disabled]="form.invalid">Confirm</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>
